@@ -32,13 +32,13 @@
 
 ## Transformer-22M模型介绍
 我们设计的模型是Transformer-22M，它具有以下结构：
-\begin{itemize}
-            \item \textbf{Patch Embedding：}首先，我们使用一个全连接层将输入的图像（假设为32x32的RGB图像）展平为一个向量，然后将其映射到一个512维的特征空间。这种操作可以看作是一种Patch Embedding，用于将输入的像素值转化为具有更丰富信息的特征表示。
 
-            \item \textbf{Transformer Encoder：}接下来，我们使用了一个Transformer Encoder进行特征的进一步提取。这个Encoder由10层Transformer Encoder Layer组成，每层都是一个标准的Transformer Encoder Layer，包含一个自注意力机制（Self-Attention Mechanism）和一个前馈神经网络（Feed Forward Neural Network）。在这里，我们设置了8个注意力头，并将前馈神经网络的隐藏层维度设为1024。
+\item \textbf{Patch Embedding：}首先，我们使用一个全连接层将输入的图像（假设为32x32的RGB图像）展平为一个向量，然后将其映射到一个512维的特征空间。这种操作可以看作是一种Patch Embedding，用于将输入的像素值转化为具有更丰富信息的特征表示。
 
-            \item \textbf{Flattening and Permuting：}为了适配Transformer Encoder的输入要求，我们对Patch Embedding的输出进行了一系列维度变换。首先，将其reshape为(batch\_size, 8, 8, channels)的形状，然后再进行维度调换，使其变为(batch\_size, channels, 8, 8)。最后，我们再次将其展平为(batch\_size, channels * 8 * 8)，以满足Transformer Encoder的输入要求。
+\item \textbf{Transformer Encoder：}接下来，我们使用了一个Transformer Encoder进行特征的进一步提取。这个Encoder由10层Transformer Encoder Layer组成，每层都是一个标准的Transformer Encoder Layer，包含一个自注意力机制（Self-Attention Mechanism）和一个前馈神经网络（Feed Forward Neural Network）。在这里，我们设置了8个注意力头，并将前馈神经网络的隐藏层维度设为1024。
 
-            \item \textbf{Classification Head：}最后，我们在Transformer Encoder的输出上接了一个全连接层，用于进行分类任务。全连接层的输出节点数为num\_classes=100，对应分类任务的类别数。
-        \end{itemize}
+\item \textbf{Flattening and Permuting：}为了适配Transformer Encoder的输入要求，我们对Patch Embedding的输出进行了一系列维度变换。首先，将其reshape为(batch\_size, 8, 8, channels)的形状，然后再进行维度调换，使其变为(batch\_size, channels, 8, 8)。最后，我们再次将其展平为(batch\_size, channels * 8 * 8)，以满足Transformer Encoder的输入要求。
+
+\item \textbf{Classification Head：}最后，我们在Transformer Encoder的输出上接了一个全连接层，用于进行分类任务。全连接层的输出节点数为num\_classes=100，对应分类任务的类别数。
+        
 
