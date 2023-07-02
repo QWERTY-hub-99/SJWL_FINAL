@@ -54,7 +54,7 @@ NeRF(Neural Radiance Field)模型是发表在ECCV2020的NeRF: Representing Scene
         
 # 参考文献
 [1] Anpei Chen, Zexiang Xu, Fuqiang Zhao, Xiaoshuai Zhang, Fanbo Xiang, Jingyi Yu,
-and Hao Su. Mvsnerf: Fast generalizable radiance field reconstruction from multi\view stereo. In Proceedings of the IEEE/CVF International Conference on Computer
+and Hao Su. Mvsnerf: Fast generalizable radiance field reconstruction from multi-view stereo. In Proceedings of the IEEE/CVF International Conference on Computer
 Vision, pages 14124–14133, 2021.
 
 [2] Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Deep residual learning
